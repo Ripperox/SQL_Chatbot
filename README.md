@@ -1,7 +1,7 @@
-# SQL Bot Project
+# SQL Chatbot Project
 
 ## Overview
-SQL Bot is a web-based application that generates SQL queries based on user inputs, executes them, and displays the results. The application also provides data visualization capabilities for the executed queries. It also provides the option for user to customize the visualization as required.
+SQL Chatbot is a web-based application that generates SQL queries based on user inputs, executes them, and displays the results. The application also provides data visualization capabilities for the executed queries. It also provides the option for user to customize the visualization as required.
 
 ## Features
 - User-friendly interface for generating SQL queries.
