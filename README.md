@@ -41,7 +41,11 @@ SQL Chatbot is a web-based application that generates SQL queries based on user 
 4. Set up environment variables:
     - Create a `.env` file in the project root directory and add the following:
     ```
-    DATABASE_URL=your_database_url
+    DB_USER=your_database_url
+    DB_PASSWORD=your_database_password
+    DB_HOST=your_database_host
+    DB_NAME=your_database_name
+    OPENAI_API_KEY=your_openai_key
     
     ```
 
