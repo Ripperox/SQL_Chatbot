@@ -1,0 +1,8 @@
+fastapi
+lida
+pandas
+matplotlib
+sqlalchemy
+python-dotenv
+seaborn
+langchain
