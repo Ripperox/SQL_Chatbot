@@ -13,6 +13,7 @@ async def get_form(request: Request):
     request.session['key'] = 'hello'
     return templates.TemplateResponse("form.html", {"request": request})
 
+
 @app.post("/generate-query/", response_class=HTMLResponse)
 async def generate_query_endpoint(request: Request, question: str = Form(...)):
     try:
@@ -72,3 +73,5 @@ async def edit_graph_endpoint(request: Request, specifications: str = Form(...))
     except Exception as e:
         logger.error(f"Error in editing graph: {e}")
         return templates.TemplateResponse("error.html", {"request": request, "message": str(e)})
+
+

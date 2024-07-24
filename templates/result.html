@@ -49,15 +49,18 @@
         h1, h2 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
         p, div {
             margin-bottom: 20px;
             color: #555;
+            text-align: center;
         }
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+            text-align: center;
         }
         input[type="text"] {
             width: 100%;
@@ -92,6 +95,7 @@
             text-decoration: none;
             color: #007BFF;
             transition: color 0.3s, transform 0.3s;
+            text-align: center;
         }
         a:hover {
             text-decoration: underline;
@@ -100,6 +104,7 @@
         }
         .result, .visualization, .edit-visualization {
             margin-bottom: 30px;
+            text-align: center;
         }
         img {
             max-width: 100%;
@@ -114,6 +119,22 @@
             background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ddd;
             border-radius: 10px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        th.city, td.city {
+            text-align: center;
         }
     </style>
 </head>
@@ -126,7 +147,36 @@
 
         <h2>Result</h2>
         <div class="result-content">
-            {{ dataframe_html | safe }}
+            <table>
+                <thead>
+                    <tr>
+                        <th class="city">City</th>
+                        <th>Number Of Traders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="city">Pondicherry</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td class="city">Karnataka</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="city">Chandigarh</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td class="city">Dadra and Nagar Haveli</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td class="city">Haryana</td>
+                        <td>3</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <h2>Visualization</h2>
