@@ -1,3 +1,199 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated SQL Query Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+            overflow: hidden;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        p, div {
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            outline: none;
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus {
+            border: 1px solid #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            padding: 15px 30px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+            transition: color 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+            transform: translateY(-2px);
+        }
+        .result, .visualization, .edit-visualization {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result-content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: auto;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 12px 20px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        th.city, td.city {
+            text-align: center;
+        }
+        .feedback {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .feedback button {
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .feedback button:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generated SQL Query</h1>
+        <div class="result-content">
+            <p>{{ query }}</p>
+        </div>
+
+        <h2>Result</h2>
+        <div class="result-content">
+            {{ dataframe_html | safe }}
+        </div>
+
+        <h2>Visualization</h2>
+        <div class="visualization">
+            <img src="data:image/png;base64,{{ graph }}" alt="Visualization">
+        </div>
+
+        <h2>Edit Visualization</h2>
+        <div class="edit-visualization">
+            <form action="/edit-graph/" method="post">
+                <label for="specifications">Specify your graph requirements:</label>
+                <input type="text" id="specifications" name="specifications" placeholder="e.g., change color, adjust labels" required aria-label="Graph specifications">
+                <input type="hidden" name="query" value="{{ query }}">
+                <button type="submit">Submit Changes</button>
+            </form>
+        </div>
+
+        <h2>Feedback</h2>
+        <div class="feedback">
+            <form action="/submit-feedback/" method="post">
+                <button type="submit" name="feedback" value="thumbs_up">&#128077;</button>
+                <button type="submit" name="feedback" value="thumbs_down">&#128078;</button>
+            </form>
+        </div>
+
+        <a href="/">Back to form</a>
+    </div>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,15 +316,18 @@
             border: 1px solid #ddd;
             border-radius: 10px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         table {
-            width: 100%;
+            width: auto;
             border-collapse: collapse;
             margin: 0 auto;
         }
         th, td {
             border: 1px solid #333;
-            padding: 8px;
+            padding: 12px 20px;
         }
         th {
             background-color: #f2f2f2;
@@ -136,7 +335,45 @@
         th.city, td.city {
             text-align: center;
         }
+        .feedback {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .feedback button {
+            font-size: 24px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .feedback button:hover {
+            transform: scale(1.2);
+        }
     </style>
+    <script>
+        async function submitFeedback(feedback) {
+            try {
+                const formData = new FormData();
+                formData.append("feedback", feedback);
+
+                const response = await fetch("/submit-feedback/", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    alert(result.message);
+                } else {
+                    const error = await response.json();
+                    alert(`Error: ${error.detail}`);
+                }
+            } catch (error) {
+                console.error("Error submitting feedback:", error);
+                alert("An error occurred while submitting feedback.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -147,36 +384,7 @@
 
         <h2>Result</h2>
         <div class="result-content">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="city">City</th>
-                        <th>Number Of Traders</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="city">Pondicherry</td>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td class="city">Karnataka</td>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td class="city">Chandigarh</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td class="city">Dadra and Nagar Haveli</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td class="city">Haryana</td>
-                        <td>3</td>
-                    </tr>
-                </tbody>
-            </table>
+            {{ dataframe_html | safe }}
         </div>
 
         <h2>Visualization</h2>
@@ -192,6 +400,12 @@
                 <input type="hidden" name="query" value="{{ query }}">
                 <button type="submit">Submit Changes</button>
             </form>
+        </div>
+
+        <h2>Feedback</h2>
+        <div class="feedback">
+            <button type="button" onclick="submitFeedback('thumbs_up')">&#128077;</button>
+            <button type="button" onclick="submitFeedback('thumbs_down')">&#128078;</button>
         </div>
 
         <a href="/">Back to form</a>

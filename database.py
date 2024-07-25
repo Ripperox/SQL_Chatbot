@@ -12,3 +12,11 @@ database_uri = f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}"
 os.environ["OPENAI_API_KEY"] = os.getenv('OPENAI_API_KEY')
 db = SQLDatabase.from_uri(database_uri)
 
+db_config = {
+    'user': db_user,
+    'password': db_password,
+    'host': db_host,
+    'database': db_name
+}
+
+
