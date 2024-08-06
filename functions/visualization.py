@@ -3,7 +3,7 @@ from logger import logger
 
 lida = Manager(text_gen=llm("openai"))
 textgen_config = TextGenerationConfig(n=1, temperature=0.2, use_cache=True)
-library ="plotly"
+library ="seaborn"
 def visualizer(dataframe, query):
     summary = lida.summarize(dataframe, summary_method="llm", textgen_config=textgen_config, n_samples=3)
     try:

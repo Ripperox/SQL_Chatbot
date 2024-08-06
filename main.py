@@ -30,13 +30,12 @@ async def generate_query_endpoint(request: Request, question: str = Form(...)):
             return templates.TemplateResponse("error.html", {"request": request, "message": image_data})
 
         dataframe_html = dataframe.to_html(index=False)
-
+        
         request.session['query'] = query
         request.session['graph_code'] = image_data.code
         request.session['dataframe_html'] = dataframe_html
         request.session['summary'] = summary
         request.session['question'] = question
-
         return templates.TemplateResponse("result.html", {
             "request": request,
             "query": query,
@@ -55,14 +54,12 @@ async def edit_graph_endpoint(request: Request, specifications: str = Form(...))
         graph_code = request.session.get('graph_code', '')
         summary = request.session.get('summary', '')
         dataframe_html = request.session.get('dataframe_html', '')
+        print(query)
+        print("summary"+summary)
         edited_image, edited_summary = edit(graph_code, specifications, summary)
 
         if isinstance(edited_image, str):
             return templates.TemplateResponse("error.html", {"request": request, "message": edited_image})
-        
-        request.session['query'] = query
-        request.session['graph_code'] = edited_image.code  
-        request.session['summary'] = edited_summary 
         
         return templates.TemplateResponse("result.html", {
             "request": request,
